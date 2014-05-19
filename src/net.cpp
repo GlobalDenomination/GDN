@@ -1192,6 +1192,19 @@ void MapPort(bool)
 // The first name is used as information source for addrman.
 // The second name should resolve to a list of seed addresses.
 static const char *strMainNetDNSSeed[][2] = {
+    /*
+    gdn.node.cryptocointools.com 54.186.203.23
+    54.187.174.245
+    86.3.84.83
+    2.31.235.109
+    108.61.103.45
+    188.226.175.6
+    62.210.141.204
+    67.215.8.91
+    92.222.14.249
+    173.236.43.58
+    192.99.152.82
+          */
     {"", ""},
     {NULL, NULL}
 };
@@ -1246,7 +1259,8 @@ void ThreadDNSAddressSeed()
 
 unsigned int pnSeed[] =
 {
-    0xe3590ccf
+    0x17cbba36, 0xf5aebb36, 0x53540356, 0x6deb1f02, 0x2d673d6c, 0x06afe2bc, 0xcc8dd23e, 0x5b08d743,
+       0xf90ede5c, 0x3a2becad, 0x529863c0
 };
 
 void DumpAddresses()
