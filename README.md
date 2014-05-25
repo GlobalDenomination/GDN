@@ -1,4 +1,4 @@
-Global Denomination [X11]
+Global Denomination GDN
 ================================
 
 http://www.GlobalDenomination.org
@@ -6,19 +6,22 @@ http://www.GlobalDenomination.org
 Copyright (c) 2009-2013 Bitcoin Developers
 Copyright (c) 2013-2014 Global Denomination Developers
 
-What is Global Denomination [GDN]?
+What is Global Denomination GDN?
 ----------------
 
-Global Denomination is a crypto-currency that is using the X11 Algorithm for Anti ASIC, energy efficient, CPU and GPU mining with Digishield.
+Global Denomination is a crypto-currency that is using the X11 Algorithm for energy efficient, CPU and GPU mining with Digishield.
  - 1 minute block targets
  - subsidy halves in 700k blocks (Approx 1 year +)
  - ~56 million total coins
  - 40 coins per block
- - Digishield for retargeting difficulty & to stop Multi-pool mining 
+ - Digishield for retargeting difficulty & to protect from Multi-pools  
 
 
 For more information, as well as an immediately useable, binary version of
 the Global Denomination client sofware, see http://www.GlobalDenomination.org
+
+v0.8.8.0
+Fixed Digishield Implementation 
 
 v0.8.7 Changes
 Hardcoded nodes
@@ -40,6 +43,7 @@ http://www.gddice.org
 http://www.gdexplorer.org
 https://www.crypto-auctions.com
 
+Global Denomination ANN
 https://bitcointalk.org/index.php?topic=578574
 
 https://www.facebook.com/GlobalDenomination
