@@ -4,7 +4,7 @@ Global Denomination GDN
 http://www.GlobalDenomination.org
 
 Copyright (c) 2009-2013 Bitcoin Developers
-Copyright (c) 2013-2014 Global Denomination Developers
+Copyright (c) 2014 Global Denomination Developers
 
 What is Global Denomination GDN?
 ----------------
@@ -19,6 +19,9 @@ Global Denomination is a crypto-currency that is using the X11 Algorithm for ene
 
 For more information, as well as an immediately useable, binary version of
 the Global Denomination client sofware, see http://www.GlobalDenomination.org
+
+04/06/2014
+Extra Cosmetic changes 
 
 v0.8.8.0
 Fixed Digishield Implementation 
