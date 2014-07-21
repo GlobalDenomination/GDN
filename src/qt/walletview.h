@@ -14,6 +14,9 @@ class ClientModel;
 class WalletModel;
 class TransactionView;
 class OverviewPage;
+class StatisticsPage;
+class BlockBrowser;
+class ChatWindow;
 class AddressBookPage;
 class SendCoinsDialog;
 class SignVerifyMessageDialog;
@@ -59,6 +62,9 @@ private:
     WalletModel *walletModel;
 
     OverviewPage *overviewPage;
+	StatisticsPage *statisticsPage;
+    BlockBrowser *blockBrowser;
+	ChatWindow *chatWindow;
     QWidget *transactionsPage;
     AddressBookPage *addressBookPage;
     AddressBookPage *receiveCoinsPage;
@@ -70,6 +76,12 @@ private:
 public slots:
     /** Switch to overview (home) page */
     void gotoOverviewPage();
+	/** Switch to statistics page*/
+    void gotoStatisticsPage();
+	/** Switch to block explorer*/
+    void gotoBlockBrowser();
+	/** Switch to Chat Page*/
+	void gotoChatPage();
     /** Switch to history (transactions) page */
     void gotoHistoryPage();
     /** Switch to address book page */
@@ -99,10 +111,6 @@ public slots:
     void unlockWallet();
 
     void setEncryptionStatus();
-
-signals:
-    /** Signal that we want to show the main window */
-    void showNormalIfMinimized();
 };
 
 #endif // WALLETVIEW_H

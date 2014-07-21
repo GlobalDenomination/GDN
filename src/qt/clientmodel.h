@@ -34,6 +34,8 @@ public:
     int getNumConnections() const;
     int getNumBlocks() const;
     int getNumBlocksAtStartup();
+	int GetNetworkHashPS(int lookup) const;
+    double GetDifficulty() const;
 
     double getVerificationProgress() const;
     QDateTime getLastBlockDate() const;

@@ -20,6 +20,12 @@ Global Denomination is a crypto-currency that is using the X11 Algorithm for ene
 For more information, as well as an immediately useable, binary version of
 the Global Denomination client sofware, see http://www.GlobalDenomination.org
 
+21/07/2014
+Qt Wallet redesign 
+Added Integrated IRC 
+Added Stats
+Added Links
+
 04/06/2014
 Extra Cosmetic changes 
 
@@ -44,6 +50,7 @@ https://www.gdtalk.org
 http://www.gdfaucet.org
 http://www.gddice.org
 http://www.gdexplorer.org
+https://cryptoconnecta.com
 https://www.crypto-auctions.com
 
 Global Denomination ANN

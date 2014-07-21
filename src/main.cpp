@@ -3026,7 +3026,7 @@ bool InitBlockIndex() {
             uint256 hashTarget = CBigNum().SetCompact(block.nBits).getuint256();
             uint256 thash;
 
-            loop
+            while (true)
             {
                 thash = block.GetHash();
                 if (thash <= hashTarget)

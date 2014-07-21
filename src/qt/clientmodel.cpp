@@ -108,6 +108,68 @@ void ClientModel::updateAlert(const QString &hash, int status)
     emit alertsChanged(getStatusBarWarnings());
 }
 
+int ClientModel::GetNetworkHashPS(int lookup) const
+{
+    CBlockIndex *pb = pindexBest;
+
+    if (pb == NULL || !pb->nHeight)
+        return 0;
+
+    // If lookup is -1, then use blocks since last difficulty change.
+    if (lookup <= 0)
+        lookup = pb->nHeight;
+
+    // If lookup is larger than chain, then set it to chain length.
+    if (lookup > pb->nHeight)
+        lookup = pb->nHeight;
+
+    CBlockIndex *pb0 = pb;
+    int64 minTime = pb0->GetBlockTime();
+	int64 maxTime = minTime;
+    for (int i = 0; i < lookup; i++) {
+        pb0 = pb0->pprev;
+        int64 time = pb0->GetBlockTime();
+        minTime = std::min(time, minTime);
+        maxTime = std::max(time, maxTime);
+    }
+
+    // In case there's a situation where minTime == maxTime, we don't want a divide by zero exception.
+    if (minTime == maxTime)
+        return 0;
+
+    uint256 workDiff = pb->nChainWork - pb0->nChainWork;
+    int64 timeDiff = maxTime - minTime;
+
+    return (boost::int64_t)(workDiff.getdouble() / timeDiff);
+}
+
+// Litecoin: copied from bitcoinrpc.cpp.
+double ClientModel::GetDifficulty() const
+{
+    // Floating point number that is a multiple of the minimum difficulty,
+    // minimum difficulty = 1.0.
+
+    if (pindexBest == NULL)
+        return 1.0;
+    int nShift = (pindexBest->nBits >> 24) & 0xff;
+
+    double dDiff =
+        (double)0x0000ffff / (double)(pindexBest->nBits & 0x00ffffff);
+
+    while (nShift < 29)
+    {
+        dDiff *= 256.0;
+        nShift++;
+    }
+    while (nShift > 29)
+    {
+        dDiff /= 256.0;
+        nShift--;
+    }
+
+    return dDiff;
+}
+
 bool ClientModel::isTestNet() const
 {
     return fTestNet;
